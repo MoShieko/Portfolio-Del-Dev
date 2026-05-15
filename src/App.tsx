@@ -1,10 +1,11 @@
-import { Contact } from "./components/Contact";
-import { Footer } from "./components/Footer";
-import { Header } from "./components/Header";
-import { Hero } from "./components/Hero";
-import { NoiseOverlay } from "./components/NoiseOverlay";
-import { Projects } from "./components/Projects";
-import { Stack } from "./components/Stack";
+import { About } from "./Components/About";
+import { Contact } from "./Components/Contact";
+import { Footer } from "./Components/Footer";
+import { Header } from "./Components/Header";
+import { Hero } from "./Components/Hero";
+import { NoiseOverlay } from "./Components/NoiseOverlay";
+import { Projects } from "./Components/Projects";
+import { Stack } from "./Components/Stack";
 import { styles } from "./styles";
 
 export default function HomePage() {
@@ -14,6 +15,7 @@ export default function HomePage() {
       <Header />
       <Hero />
       <Projects />
+      <About />
       <Stack />
       <Contact />
       <Footer />

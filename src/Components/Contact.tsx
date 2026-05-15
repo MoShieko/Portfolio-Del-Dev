@@ -1,10 +1,9 @@
-import React from "react";
 import { styles } from "../styles";
 
 export function Contact() {
   return (
-    <section id="contact" style={styles.section}>
-      <div style={styles.contactBox}>
+    <section id="contact" className="page-section" style={styles.section}>
+      <div className="contact-box" style={styles.contactBox}>
         <div style={styles.contactLeft}>
           <h2 style={styles.contactTitle}>
             Let's build something{" "}
@@ -15,8 +14,8 @@ export function Contact() {
             engineering roles.
           </p>
           <div style={styles.contactMeta}>
-            <span>✉ info@del.dev</span>
-            <span>📍 's-Hertogenbosch / Netherlands</span>
+            <span>@ info@del.dev</span>
+            <span>'s-Hertogenbosch / Netherlands</span>
           </div>
         </div>
         <div style={styles.contactRight}>
@@ -30,7 +29,7 @@ export function Contact() {
               }}
             />
           ))}
-          <button style={styles.initBtn}>INIT_CONNECTION ▶</button>
+          <button style={styles.initBtn}>INIT_CONNECTION &gt;</button>
         </div>
       </div>
     </section>

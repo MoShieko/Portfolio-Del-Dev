@@ -20,7 +20,7 @@ export function Hero() {
   }, [fullText]);
 
   return (
-    <section style={styles.hero}>
+    <section className="hero-section" style={styles.hero}>
       <div style={styles.availableBadge}>
         <span style={styles.dot} />
         AVAILABLE FOR NEW PROJECTS
@@ -39,7 +39,7 @@ export function Hero() {
         Building scalable systems with mathematical precision.
       </p>
 
-      <div style={styles.heroBtns}>
+      <div className="hero-actions" style={styles.heroBtns}>
         <button style={styles.btnPrimary}>View My Work</button>
         <button
           style={styles.btnGhost}
@@ -54,7 +54,7 @@ export function Hero() {
       </div>
 
       {/* Code window */}
-      <div style={styles.codeWindow}>
+      <div className="code-window" style={styles.codeWindow}>
         <div style={styles.windowDots}>
           <span style={{ ...styles.windowDot, background: "#FF5F57" }} />
           <span style={{ ...styles.windowDot, background: "#FFBD2E" }} />

@@ -1,10 +1,12 @@
-import React from "react";
 import { STACK } from "../constants";
 import { styles } from "../styles";
 
 export function Stack() {
   return (
-    <section style={{ ...styles.section, ...styles.stackSection }}>
+    <section
+      className="page-section stack-section"
+      style={{ ...styles.section, ...styles.stackSection }}
+    >
       <h2 style={{ ...styles.sectionTitle, textAlign: "center" }}>
         Technical Stack
       </h2>
@@ -18,7 +20,7 @@ export function Stack() {
         Architecting with the industry's most robust tools.
       </p>
 
-      <div style={styles.stackGrid}>
+      <div className="stack-grid" style={styles.stackGrid}>
         {STACK.map((s) => (
           <div key={s.label} style={styles.stackCard}>
             <span style={styles.stackIcon}>{s.icon}</span>

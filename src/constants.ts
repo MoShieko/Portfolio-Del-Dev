@@ -23,8 +23,8 @@ export const PROJECTS = [
 ];
 
 export const STACK = [
-  { icon: "⬛", label: "Backend", sub: "Node.js, Go, Rust" },
-  { icon: "◈", label: "Frontend", sub: "React, Vue, Tailwind" },
-  { icon: "☁", label: "Cloud", sub: "AWS, GCP, Terraform" },
-  { icon: "🗄", label: "Data", sub: "Postgres, Redis, Mongo" },
+  { icon: "{ }", label: "Backend", sub: "Node.js, Go, Rust" },
+  { icon: "<>", label: "Frontend", sub: "React, Vue, Tailwind" },
+  { icon: "^^", label: "Cloud", sub: "AWS, GCP, Terraform" },
+  { icon: "[]", label: "Data", sub: "Postgres, Redis, Mongo" },
 ];
