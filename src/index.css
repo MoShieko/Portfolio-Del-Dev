@@ -42,6 +42,698 @@
   }
 }
 
+.project-thumb {
+  overflow: hidden;
+}
+
+.project-thumb__image {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  width: 100%;
+}
+
+.dashboard-preview {
+  background:
+    radial-gradient(circle at 8% 10%, rgba(213, 226, 255, 0.98), rgba(213, 226, 255, 0) 34%),
+    radial-gradient(circle at 84% 18%, rgba(250, 232, 218, 0.98), rgba(250, 232, 218, 0) 32%),
+    linear-gradient(135deg, #eef4ff 0%, #f8fbff 48%, #fff6ef 100%);
+  color: #131827;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  height: 100%;
+  padding: 18px 22px;
+  width: 100%;
+}
+
+.dashboard-preview__nav,
+.dashboard-preview__panel {
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(165, 183, 255, 0.55);
+  box-shadow: 0 12px 28px rgba(54, 73, 115, 0.13);
+}
+
+.dashboard-preview__nav {
+  align-items: center;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto 14px;
+  max-width: 360px;
+  padding: 8px 10px;
+}
+
+.dashboard-preview__brand,
+.dashboard-preview__user,
+.dashboard-preview__stat-head {
+  align-items: center;
+  display: flex;
+}
+
+.dashboard-preview__brand {
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.dashboard-preview__folder {
+  background: #dce5ff;
+  border-radius: 7px;
+  height: 26px;
+  position: relative;
+  width: 26px;
+}
+
+.dashboard-preview__folder::before {
+  border: 1.8px solid #2b4fff;
+  border-radius: 3px;
+  content: "";
+  height: 10px;
+  left: 7px;
+  position: absolute;
+  top: 8px;
+  width: 12px;
+}
+
+.dashboard-preview__user {
+  background: rgba(255, 255, 255, 0.68);
+  border: 1px solid rgba(196, 204, 224, 0.82);
+  border-radius: 999px;
+  gap: 7px;
+  padding: 4px 8px 4px 4px;
+}
+
+.dashboard-preview__user span {
+  align-items: center;
+  background: #294dff;
+  border-radius: 999px;
+  color: white;
+  display: flex;
+  font-size: 9px;
+  font-weight: 800;
+  height: 22px;
+  justify-content: center;
+  width: 22px;
+}
+
+.dashboard-preview__user strong,
+.dashboard-preview__user small {
+  display: block;
+  line-height: 1.05;
+}
+
+.dashboard-preview__user strong {
+  font-size: 8px;
+}
+
+.dashboard-preview__user small {
+  color: #5e6573;
+  font-size: 7px;
+  font-weight: 700;
+}
+
+.dashboard-preview__panel {
+  align-items: center;
+  border-radius: 8px;
+  display: flex;
+  gap: 14px;
+  justify-content: space-between;
+  margin: 0 auto 12px;
+  max-width: 430px;
+  padding: 12px 14px;
+}
+
+.dashboard-preview__panel h4,
+.dashboard-preview__panel p {
+  margin: 0;
+}
+
+.dashboard-preview__panel h4 {
+  font-size: 17px;
+  line-height: 1;
+}
+
+.dashboard-preview__panel p {
+  color: #5c6373;
+  font-size: 8px;
+  margin-top: 6px;
+}
+
+.dashboard-preview__actions {
+  display: grid;
+  gap: 6px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 210px;
+}
+
+.dashboard-preview__actions span {
+  border: 1px solid #9fb2ff;
+  border-radius: 999px;
+  color: #123ddb;
+  font-size: 7px;
+  font-weight: 800;
+  line-height: 1;
+  padding: 7px 9px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.dashboard-preview__actions span:nth-child(1),
+.dashboard-preview__actions span:nth-child(3) {
+  background: #294dff;
+  border-color: #294dff;
+  color: white;
+}
+
+.dashboard-preview__stats {
+  display: grid;
+  gap: 7px;
+  grid-template-columns: repeat(5, 1fr);
+  margin: 0 auto;
+  max-width: 430px;
+}
+
+.dashboard-preview__stat {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  box-shadow: 0 10px 24px rgba(54, 73, 115, 0.14);
+  min-height: 62px;
+  padding: 9px;
+}
+
+.dashboard-preview__stat-head {
+  gap: 6px;
+}
+
+.dashboard-preview__stat-head strong {
+  color: #4a5365;
+  font-size: 8px;
+}
+
+.dashboard-preview__stat b {
+  display: block;
+  font-size: 24px;
+  line-height: 1;
+  margin-top: 12px;
+}
+
+.dashboard-preview__stat-icon {
+  align-items: center;
+  border-radius: 7px;
+  display: flex;
+  font-size: 8px;
+  font-weight: 900;
+  height: 20px;
+  justify-content: center;
+  width: 20px;
+}
+
+.dashboard-preview__stat-icon--blue {
+  background: #dfe6ff;
+  color: #294dff;
+}
+
+.dashboard-preview__stat-icon--green {
+  background: #d9f2e3;
+  color: #0f9b4d;
+}
+
+.dashboard-preview__stat-icon--slate {
+  background: #e9edf2;
+  color: #5a6a82;
+}
+
+.dashboard-preview__stat-icon--orange {
+  background: #ffead9;
+  color: #ff6f2c;
+}
+
+.dashboard-preview__stat-icon--red {
+  background: #ffe0e3;
+  color: #ff4354;
+}
+
+.barbershop-preview {
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.82), rgba(0, 0, 0, 0.34), rgba(0, 0, 0, 0.82)),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.9)),
+    repeating-linear-gradient(90deg, #1e1f22 0 44px, #151619 44px 48px, #28292c 48px 88px),
+    linear-gradient(135deg, #2f3136, #101113);
+  color: #f8f8f6;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  height: 100%;
+  letter-spacing: 0.08em;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.barbershop-preview::before {
+  background:
+    linear-gradient(90deg, transparent 0 24%, rgba(255, 255, 255, 0.08) 24% 25%, transparent 25% 54%, rgba(255, 255, 255, 0.06) 54% 55%, transparent 55%),
+    radial-gradient(circle at 22% 60%, rgba(255, 255, 255, 0.08), transparent 16%),
+    radial-gradient(circle at 74% 48%, rgba(255, 255, 255, 0.06), transparent 18%);
+  content: "";
+  inset: 0;
+  opacity: 0.75;
+  position: absolute;
+}
+
+.barbershop-preview__shade {
+  background: rgba(0, 0, 0, 0.34);
+  backdrop-filter: grayscale(1);
+  inset: 0;
+  position: absolute;
+}
+
+.barbershop-preview__nav {
+  align-items: center;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: minmax(105px, 0.9fr) minmax(140px, 1.3fr) 72px;
+  left: 14px;
+  position: absolute;
+  right: 14px;
+  top: 12px;
+  z-index: 1;
+}
+
+.barbershop-preview__brand,
+.barbershop-preview__links {
+  align-items: center;
+  display: flex;
+}
+
+.barbershop-preview__brand {
+  gap: 8px;
+}
+
+.barbershop-preview__logo {
+  align-items: center;
+  background:
+    radial-gradient(circle, rgba(207, 174, 85, 0.32), transparent 52%),
+    #0b0b0c;
+  border: 1px solid #c9a84d;
+  border-radius: 999px;
+  box-shadow: 0 0 14px rgba(201, 168, 77, 0.18);
+  color: #e7c761;
+  display: flex;
+  font-size: 8px;
+  height: 30px;
+  justify-content: center;
+  letter-spacing: 0;
+  width: 30px;
+}
+
+.barbershop-preview__brand strong,
+.barbershop-preview__brand small {
+  display: block;
+  line-height: 1;
+}
+
+.barbershop-preview__brand strong {
+  color: white;
+  font-size: 13px;
+}
+
+.barbershop-preview__brand small {
+  color: #c9a84d;
+  font-size: 6px;
+  margin-top: 3px;
+}
+
+.barbershop-preview__links {
+  color: #a9adb8;
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  font-size: 6px;
+  font-weight: 800;
+  gap: 18px;
+  justify-content: center;
+}
+
+.barbershop-preview__contact {
+  border: 1px solid #b7953e;
+  color: #d4b35c;
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  font-size: 7px;
+  font-weight: 900;
+  padding: 9px 10px;
+  text-align: center;
+}
+
+.barbershop-preview__hero {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  inset: 42px 12px 12px;
+  justify-content: center;
+  position: absolute;
+  text-align: center;
+  z-index: 1;
+}
+
+.barbershop-preview__mark {
+  border: 1px solid #c9a84d;
+  clip-path: polygon(50% 0, 92% 25%, 92% 75%, 50% 100%, 8% 75%, 8% 25%);
+  display: block;
+  height: 20px;
+  margin-bottom: 12px;
+  opacity: 0.9;
+  width: 20px;
+}
+
+.barbershop-preview__hero h4 {
+  color: #fff;
+  font-size: clamp(24px, 8vw, 46px);
+  line-height: 0.92;
+  margin: 0;
+}
+
+.barbershop-preview__hero h4 strong {
+  color: #c9a84d;
+  display: block;
+}
+
+.barbershop-preview__rule {
+  background: #c9a84d;
+  display: block;
+  height: 1px;
+  margin: 10px 0 8px;
+  width: 44px;
+}
+
+.barbershop-preview__hero p {
+  color: #aeb3c0;
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  line-height: 1.6;
+  margin: 0 0 11px;
+  max-width: 220px;
+}
+
+.barbershop-preview__hero button {
+  background: rgba(0, 0, 0, 0.18);
+  border: 1px solid rgba(201, 168, 77, 0.52);
+  color: #fff;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  padding: 9px 28px;
+}
+
+.noor-preview {
+  background: #000;
+  color: #f7f7f7;
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  height: 100%;
+  overflow: hidden;
+  padding: 12px 14px;
+  position: relative;
+  width: 100%;
+}
+
+.noor-preview__status,
+.noor-preview__topbar,
+.noor-preview__filters,
+.noor-preview__grid {
+  position: relative;
+  z-index: 1;
+}
+
+.noor-preview__status {
+  align-items: center;
+  display: flex;
+  font-size: 12px;
+  font-weight: 900;
+  justify-content: space-between;
+  margin: 0 auto 18px;
+  max-width: 330px;
+}
+
+.noor-preview__status > div {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+}
+
+.noor-preview__bars {
+  background: linear-gradient(90deg, #fff 0 3px, transparent 3px 6px, #fff 6px 10px, transparent 10px 13px, #777 13px 17px);
+  display: block;
+  height: 12px;
+  opacity: 0.9;
+  width: 18px;
+}
+
+.noor-preview__wifi {
+  border: 4px solid #fff;
+  border-color: #fff transparent transparent transparent;
+  border-radius: 999px;
+  display: block;
+  height: 16px;
+  width: 22px;
+}
+
+.noor-preview__battery {
+  background: #303030;
+  border-radius: 7px;
+  color: #f4f4f4;
+  font-size: 10px;
+  font-weight: 900;
+  line-height: 1;
+  padding: 4px 7px;
+  position: relative;
+}
+
+.noor-preview__battery::before {
+  background: #e94d54;
+  border-radius: 7px 0 0 7px;
+  content: "";
+  inset: 0 50% 0 0;
+  position: absolute;
+}
+
+.noor-preview__battery {
+  isolation: isolate;
+}
+
+.noor-preview__battery::after {
+  content: "15";
+  inset: 4px 7px;
+  position: absolute;
+  z-index: 1;
+}
+
+.noor-preview__topbar {
+  align-items: center;
+  background: linear-gradient(180deg, transparent, rgba(18, 18, 18, 0.88));
+  display: grid;
+  grid-template-columns: 56px 1fr 56px;
+  margin: 0 auto 18px;
+  max-width: 330px;
+  padding: 0 10px 8px;
+}
+
+.noor-preview__topbar strong {
+  font-size: 20px;
+  letter-spacing: -0.02em;
+  text-align: center;
+}
+
+.noor-preview__icon {
+  align-items: center;
+  background: linear-gradient(180deg, #171717, #111);
+  border-radius: 16px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+  display: flex;
+  font-size: 20px;
+  font-weight: 900;
+  height: 44px;
+  justify-content: center;
+  width: 44px;
+}
+
+.noor-preview__icon--crown {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: -7px;
+  transform: rotate(180deg);
+}
+
+.noor-preview__icon--gear {
+  justify-self: end;
+}
+
+.noor-preview__filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+  min-width: max-content;
+}
+
+.noor-preview__filters span {
+  background: #121212;
+  border: 1px solid #262626;
+  border-radius: 999px;
+  color: #f5f5f5;
+  font-size: 12px;
+  font-weight: 900;
+  line-height: 1;
+  padding: 9px 17px;
+}
+
+.noor-preview__filters .noor-preview__filter--active {
+  background: #ffdf3f;
+  border-color: #ffdf3f;
+  color: #050505;
+}
+
+.noor-preview__arabic {
+  color: #d7d7d7;
+  display: block;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 11px;
+  font-style: italic;
+  margin: 0 0 12px;
+  position: relative;
+  text-align: center;
+  z-index: 1;
+}
+
+.noor-preview h4 {
+  font-size: 18px;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  margin: 0 0 12px;
+  position: relative;
+  z-index: 1;
+}
+
+.noor-preview__grid {
+  display: grid;
+  gap: 11px 15px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.noor-preview__card {
+  min-width: 0;
+  text-align: center;
+}
+
+.noor-preview__card small {
+  color: #989898;
+  display: block;
+  font-size: 9px;
+  font-weight: 800;
+  margin-top: 6px;
+}
+
+.noor-preview__clock {
+  align-items: center;
+  aspect-ratio: 1;
+  background: #050505;
+  border: 1px solid #252525;
+  border-radius: 999px;
+  box-shadow: 0 0 0 16px #131313, 0 0 0 17px #252525;
+  display: flex;
+  justify-content: center;
+  margin: 17px auto 18px;
+  max-width: 72px;
+  position: relative;
+  width: calc(100% - 34px);
+}
+
+.noor-preview__clock::before {
+  background:
+    radial-gradient(circle at 50% 8%, #f2f2f2 0 2px, transparent 2px),
+    radial-gradient(circle at 92% 50%, #f2f2f2 0 2px, transparent 2px),
+    radial-gradient(circle at 50% 92%, #f2f2f2 0 2px, transparent 2px),
+    radial-gradient(circle at 8% 50%, #f2f2f2 0 2px, transparent 2px);
+  content: "";
+  inset: 7px;
+  opacity: 0.85;
+  position: absolute;
+}
+
+.noor-preview__clock--minimal {
+  background:
+    repeating-conic-gradient(from -2deg, #f0f0f0 0deg 2deg, transparent 2deg 8deg),
+    radial-gradient(circle, #050505 0 65%, transparent 66%);
+}
+
+.noor-preview__clock--ring {
+  box-shadow: 0 0 0 9px #0b0b0b, 0 0 0 15px #eadf84, 0 0 0 18px #74641a, 0 0 0 19px #111;
+}
+
+.noor-preview__clock--retro {
+  border-color: #d5c033;
+  box-shadow: 0 0 18px rgba(255, 224, 50, 0.4), 0 0 0 2px #d5c033, 0 0 0 16px #111, 0 0 0 17px #242424;
+}
+
+.noor-preview__clock--retro::before {
+  background:
+    radial-gradient(circle at 50% 8%, #d5c033 0 2px, transparent 2px),
+    radial-gradient(circle at 84% 26%, #d5c033 0 2px, transparent 2px),
+    radial-gradient(circle at 92% 50%, #d5c033 0 2px, transparent 2px),
+    radial-gradient(circle at 50% 92%, #d5c033 0 2px, transparent 2px),
+    radial-gradient(circle at 8% 50%, #d5c033 0 2px, transparent 2px);
+}
+
+.noor-preview__clock--geo {
+  background:
+    repeating-conic-gradient(from 15deg, rgba(255, 255, 255, 0.16) 0deg 1deg, transparent 1deg 30deg),
+    radial-gradient(circle, #080808 0 62%, transparent 63%);
+}
+
+.noor-preview__web {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  clip-path: polygon(50% 0, 90% 20%, 100% 62%, 72% 100%, 28% 100%, 0 62%, 10% 20%);
+  inset: 8px;
+  position: absolute;
+}
+
+.noor-preview__hand {
+  border-radius: 999px;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform-origin: left center;
+  z-index: 2;
+}
+
+.noor-preview__hand--minute {
+  background: #f9f9f9;
+  height: 4px;
+  transform: rotate(-58deg);
+  width: 30%;
+}
+
+.noor-preview__hand--hour {
+  background: #c9c9c9;
+  height: 3px;
+  transform: rotate(-96deg);
+  width: 39%;
+}
+
+.noor-preview__hand--second {
+  background: #ffdf3f;
+  box-shadow: 0 0 8px rgba(255, 223, 63, 0.72);
+  height: 2px;
+  transform: rotate(184deg);
+  width: 42%;
+}
+
+.noor-preview__pin {
+  background: #ffdf3f;
+  border-radius: 999px;
+  box-shadow: 0 0 0 2px #050505;
+  height: 7px;
+  position: absolute;
+  width: 7px;
+  z-index: 3;
+}
+
 @media (max-width: 900px) {
   .site-nav {
     gap: 16px !important;
@@ -62,6 +754,37 @@
     align-items: flex-start !important;
     flex-direction: column !important;
     gap: 18px !important;
+  }
+
+  .dashboard-preview {
+    padding: 14px;
+  }
+
+  .dashboard-preview__panel {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .dashboard-preview__actions {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .barbershop-preview__nav {
+    grid-template-columns: 1fr auto;
+  }
+
+  .barbershop-preview__links {
+    display: none;
+  }
+
+  .noor-preview {
+    padding: 12px;
+  }
+
+  .noor-preview__filters span {
+    padding-inline: 14px;
   }
 }
 
@@ -159,6 +882,36 @@
   .site-footer__links {
     flex-wrap: wrap !important;
     gap: 14px !important;
+  }
+
+  .dashboard-preview__nav {
+    max-width: none;
+  }
+
+  .dashboard-preview__stats {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .barbershop-preview__contact {
+    display: none;
+  }
+
+  .barbershop-preview__nav {
+    grid-template-columns: 1fr;
+  }
+
+  .noor-preview__topbar {
+    grid-template-columns: 46px 1fr 46px;
+  }
+
+  .noor-preview__topbar strong {
+    font-size: 18px;
+  }
+
+  .noor-preview__icon {
+    border-radius: 14px;
+    height: 38px;
+    width: 38px;
   }
 }
 
