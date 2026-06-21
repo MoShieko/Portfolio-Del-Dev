@@ -38,7 +38,7 @@ export const styles: Record<string, React.CSSProperties> = {
   logoImage: {
     display: "block",
     height: "100%",
-    objectFit: "cover",
+    objectFit: "contain",
     objectPosition: "center",
     width: 280,
   },
@@ -443,7 +443,7 @@ export const styles: Record<string, React.CSSProperties> = {
   footerLogo: {
     display: "block",
     height: 58,
-    objectFit: "cover",
+    objectFit: "contain",
     objectPosition: "center",
     width: 210,
   },

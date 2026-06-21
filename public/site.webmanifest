@@ -1,0 +1,23 @@
+{
+  "name": "DELDEV",
+  "short_name": "DELDEV",
+  "description": "Snelle, schaalbare en professionele digitale ervaringen.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0A0F1A",
+  "theme_color": "#0A0F1A",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "831x333",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
