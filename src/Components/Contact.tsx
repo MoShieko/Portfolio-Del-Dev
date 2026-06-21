@@ -4,7 +4,7 @@ import { CONTACT_EMAIL } from "../constants";
 import type { Translation } from "../i18n";
 import { styles } from "../styles";
 
-const contactEndpoint = import.meta.env.VITE_CONTACT_ENDPOINT;
+const contactEndpoint = import.meta.env.VITE_CONTACT_ENDPOINT || "/api/contact";
 
 type ContactProps = {
   t: Translation;
@@ -30,27 +30,6 @@ export function Contact({ t }: ContactProps) {
     event.preventDefault();
     setStatus("sending");
 
-    const body = [
-      `${t.contact.name.replace("> ", "")}: ${form.name}`,
-      `${t.contact.email.replace("> ", "")}: ${form.email}`,
-      "",
-      form.details,
-    ].join("\n");
-
-    if (!contactEndpoint) {
-      window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
-        t.contact.subject
-      )}&body=${encodeURIComponent(body)}`;
-
-      setForm({
-        name: "",
-        email: "",
-        details: "",
-      });
-      setStatus("sent");
-      return;
-    }
-
     try {
       const response = await fetch(contactEndpoint, {
         method: "POST",
@@ -63,7 +42,6 @@ export function Contact({ t }: ContactProps) {
           email: form.email,
           message: form.details,
           subject: t.contact.subject,
-          to: CONTACT_EMAIL,
         }),
       });
 
@@ -94,9 +72,9 @@ export function Contact({ t }: ContactProps) {
             {t.contact.sub}
           </p>
           <div style={styles.contactMeta}>
-            <a href={`mailto:${CONTACT_EMAIL}`} style={styles.contactLink}>
+            <span style={styles.contactLink}>
               @ {CONTACT_EMAIL}
-            </a>
+            </span>
             <span>'s-Hertogenbosch / Netherlands</span>
           </div>
         </div>

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { CONTACT_EMAIL, PROJECTS } from "../constants";
+import { PROJECTS } from "../constants";
 import type { Translation } from "../i18n";
 import { styles } from "../styles";
 
@@ -66,9 +66,9 @@ function ProjectManagementDashboardPreview() {
 
 function BlackBoxBarbershopPreview() {
   const requestAppointment = () => {
-    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
-      "Black Box Barbershop appointment"
-    )}`;
+    document
+      .getElementById("contact")
+      ?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
