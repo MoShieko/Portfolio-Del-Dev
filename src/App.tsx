@@ -11,17 +11,33 @@ import type { LanguageCode } from "./i18n";
 import { detectLanguage, translations } from "./i18n";
 import { styles } from "./styles";
 
+function getSavedLanguage(): LanguageCode | null {
+  try {
+    const savedLanguage = localStorage.getItem("deldev-language") as
+      | LanguageCode
+      | null;
+    return savedLanguage && savedLanguage in translations ? savedLanguage : null;
+  } catch {
+    return null;
+  }
+}
+
+function saveLanguage(language: LanguageCode) {
+  try {
+    localStorage.setItem("deldev-language", language);
+  } catch {
+    // The site should still render when storage is blocked.
+  }
+}
+
 export default function HomePage() {
   const [language, setLanguage] = useState<LanguageCode>(() => {
-    const savedLanguage = localStorage.getItem("deldev-language") as LanguageCode | null;
-    return savedLanguage && savedLanguage in translations
-      ? savedLanguage
-      : detectLanguage();
+    return getSavedLanguage() || detectLanguage();
   });
   const t = translations[language];
 
   useEffect(() => {
-    localStorage.setItem("deldev-language", language);
+    saveLanguage(language);
     document.documentElement.lang = language;
   }, [language]);
 

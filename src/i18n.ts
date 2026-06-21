@@ -412,6 +412,8 @@ export const translations = {
 export type Translation = (typeof translations)["en"];
 
 export function detectLanguage(): LanguageCode {
-  const browserLanguage = navigator.language.split("-")[0] as LanguageCode;
-  return browserLanguage in translations ? browserLanguage : "en";
+  const browserLanguage = globalThis.navigator?.language?.split("-")[0] as
+    | LanguageCode
+    | undefined;
+  return browserLanguage && browserLanguage in translations ? browserLanguage : "en";
 }
