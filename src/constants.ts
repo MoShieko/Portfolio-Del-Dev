@@ -1,4 +1,5 @@
-export const NAV_LINKS = ["Home", "Projects", "About", "Contact"];
+export const BRAND_NAME = "DELDEV";
+export const CONTACT_EMAIL = "info@deldev.nl";
 
 export const PROJECTS = [
   {

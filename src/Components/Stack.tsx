@@ -1,14 +1,19 @@
 import { STACK } from "../constants";
+import type { Translation } from "../i18n";
 import { styles } from "../styles";
 
-export function Stack() {
+type StackProps = {
+  t: Translation;
+};
+
+export function Stack({ t }: StackProps) {
   return (
     <section
       className="page-section stack-section"
       style={{ ...styles.section, ...styles.stackSection }}
     >
       <h2 style={{ ...styles.sectionTitle, textAlign: "center" }}>
-        Technical Stack
+        {t.stack.title}
       </h2>
       <p
         style={{
@@ -17,7 +22,7 @@ export function Stack() {
           marginBottom: 40,
         }}
       >
-        Architecting with the industry's most robust tools.
+        {t.stack.sub}
       </p>
 
       <div className="stack-grid" style={styles.stackGrid}>

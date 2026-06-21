@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { PROJECTS } from "../constants";
+import { CONTACT_EMAIL, PROJECTS } from "../constants";
+import type { Translation } from "../i18n";
 import { styles } from "../styles";
 
 const PROJECT_IMAGE_PATHS: Record<string, string> = {
@@ -64,6 +65,12 @@ function ProjectManagementDashboardPreview() {
 }
 
 function BlackBoxBarbershopPreview() {
+  const requestAppointment = () => {
+    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
+      "Black Box Barbershop appointment"
+    )}`;
+  };
+
   return (
     <div className="barbershop-preview" aria-label="Black Box Barbershop preview">
       <div className="barbershop-preview__shade" />
@@ -90,7 +97,9 @@ function BlackBoxBarbershopPreview() {
         </h4>
         <span className="barbershop-preview__rule" />
         <p>MORE THAN A HAIRCUT. A BROTHERHOOD IN KOBLENZ.</p>
-        <button type="button">BOOK APPOINTMENT</button>
+        <button onClick={requestAppointment} type="button">
+          BOOK APPOINTMENT
+        </button>
       </div>
     </div>
   );
@@ -192,21 +201,30 @@ function ProjectThumbnail({ title }: { title: string }) {
   return <ProjectPreview title={title} />;
 }
 
-export function Projects() {
+type ProjectsProps = {
+  t: Translation;
+};
+
+export function Projects({ t }: ProjectsProps) {
   return (
     <section id="projects" className="page-section" style={styles.section}>
       <div className="section-header" style={styles.sectionHeader}>
         <div>
-          <h2 style={styles.sectionTitle}>Featured Projects</h2>
-          <p style={styles.sectionSub}>Selected engineering achievements.</p>
+          <h2 style={styles.sectionTitle}>{t.projects.title}</h2>
+          <p style={styles.sectionSub}>{t.projects.sub}</p>
         </div>
-        <a href="#" style={styles.viewAll}>
-          VIEW_ALL_REPOS -&gt;
+        <a
+          href="https://github.com"
+          rel="noreferrer"
+          style={styles.viewAll}
+          target="_blank"
+        >
+          {t.projects.viewAll}
         </a>
       </div>
 
       <div className="projects-grid" style={styles.projectsGrid}>
-        {PROJECTS.map((p) => (
+        {PROJECTS.map((p, index) => (
           <div key={p.title} style={styles.projectCard}>
             <div className="project-thumb" style={styles.projectThumb}>
               <ProjectThumbnail title={p.title} />
@@ -234,7 +252,9 @@ export function Projects() {
               >
                 {p.title}
               </h3>
-              <p style={styles.projectDesc}>{p.desc}</p>
+              <p style={styles.projectDesc}>
+                {t.projects.descriptions[index] || p.desc}
+              </p>
             </div>
           </div>
         ))}

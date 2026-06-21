@@ -20,7 +20,7 @@ export const styles: Record<string, React.CSSProperties> = {
     display: "flex",
     alignItems: "center",
     justifyContent: "space-between",
-    padding: "20px clamp(16px, 6vw, 80px)",
+    padding: "14px clamp(16px, 6vw, 80px)",
     borderBottom: "1px solid rgba(59,130,246,0.1)",
     position: "sticky",
     top: 0,
@@ -29,10 +29,18 @@ export const styles: Record<string, React.CSSProperties> = {
     zIndex: 100,
   },
   logo: {
-    color: "#3B82F6",
-    fontWeight: 700,
-    fontSize: 18,
-    letterSpacing: "0.1em",
+    alignItems: "center",
+    display: "flex",
+    flexShrink: 0,
+    height: 78,
+    textDecoration: "none",
+  },
+  logoImage: {
+    display: "block",
+    height: "100%",
+    objectFit: "cover",
+    objectPosition: "center",
+    width: 280,
   },
   navLinks: {
     display: "flex",
@@ -65,6 +73,28 @@ export const styles: Record<string, React.CSSProperties> = {
     color: "#E2E8F0",
     borderBottom: "2px solid #3B82F6",
     paddingBottom: 2,
+  },
+  languageControl: {
+    alignItems: "center",
+    display: "flex",
+    gap: 8,
+  },
+  languageLabel: {
+    color: "#475569",
+    fontSize: 11,
+    letterSpacing: "0.08em",
+    textTransform: "uppercase",
+  },
+  languageSelect: {
+    background: "#0D1424",
+    border: "1px solid rgba(59,130,246,0.28)",
+    borderRadius: 4,
+    color: "#E2E8F0",
+    cursor: "pointer",
+    fontFamily: "inherit",
+    fontSize: 12,
+    outline: "none",
+    padding: "7px 10px",
   },
   resumeBtn: {
     border: "1px solid #3B82F6",
@@ -364,6 +394,10 @@ export const styles: Record<string, React.CSSProperties> = {
     fontSize: 13,
     color: "#64748B",
   },
+  contactLink: {
+    color: "#64748B",
+    textDecoration: "none",
+  },
   contactRight: { display: "flex", flexDirection: "column", gap: 12 },
   contactInput: {
     background: "#111827",
@@ -389,6 +423,14 @@ export const styles: Record<string, React.CSSProperties> = {
     letterSpacing: "0.1em",
     marginTop: 4,
   },
+  formStatus: {
+    color: "#10B981",
+    fontSize: 12,
+    lineHeight: 1.5,
+  },
+  formStatusError: {
+    color: "#F87171",
+  },
   footer: {
     display: "flex",
     alignItems: "center",
@@ -399,10 +441,11 @@ export const styles: Record<string, React.CSSProperties> = {
     zIndex: 1,
   },
   footerLogo: {
-    color: "#E2E8F0",
-    fontWeight: 700,
-    fontSize: 14,
-    letterSpacing: "0.1em",
+    display: "block",
+    height: 58,
+    objectFit: "cover",
+    objectPosition: "center",
+    width: 210,
   },
   footerLinks: { display: "flex", gap: 28 },
   footerLink: {

@@ -1,13 +1,19 @@
 import { useState, useEffect, useRef } from "react";
+import type { Translation } from "../i18n";
 import { styles } from "../styles";
 import { colorize } from "../utils.tsx";
 
-export function Hero() {
+type HeroProps = {
+  t: Translation;
+};
+
+export function Hero({ t }: HeroProps) {
   const [typed, setTyped] = useState("");
-  const fullText = `const portfolio = {\n  name: "System Architect" ,\n  stack: [ "React" , "TypeScript" , "SwiftUI" ],\n  status: "Building the future"\n};`;
+  const fullText = `const portfolio = {\n  name: "System Architect" ,\n  stack: [ "React" , "TypeScript" , "SwiftUI" ],\n  status: "${t.hero.codeStatus}"\n};`;
   const idx = useRef(0);
 
   useEffect(() => {
+    idx.current = 0;
     const interval = setInterval(() => {
       if (idx.current < fullText.length) {
         setTyped(fullText.slice(0, idx.current + 1));
@@ -19,37 +25,48 @@ export function Hero() {
     return () => clearInterval(interval);
   }, [fullText]);
 
+  const scrollToSection = (sectionId: string) => {
+    document
+      .getElementById(sectionId)
+      ?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <section className="hero-section" style={styles.hero}>
       <div style={styles.availableBadge}>
         <span style={styles.dot} />
-        AVAILABLE FOR NEW PROJECTS
+        {t.hero.badge}
       </div>
 
       <h1 style={styles.heroTitle}>
-        Crafting digital experiences
+        {t.hero.title}
         <br />
-        <span style={styles.heroAccent}>with code.</span>
+        <span style={styles.heroAccent}>{t.hero.accent}</span>
       </h1>
 
       <p style={styles.heroSub}>
-        Full-stack developer specializing in React, Node.js, and Cloud
-        Architecture.
-        <br />
-        Building scalable systems with mathematical precision.
+        {t.hero.sub.split("\n").map((line) => (
+          <span key={line}>
+            {line}
+            <br />
+          </span>
+        ))}
       </p>
 
       <div className="hero-actions" style={styles.heroBtns}>
-        <button style={styles.btnPrimary}>View My Work</button>
         <button
-          style={styles.btnGhost}
-          onClick={() =>
-            document
-              .getElementById("contact")
-              ?.scrollIntoView({ behavior: "smooth" })
-          }
+          onClick={() => scrollToSection("projects")}
+          style={styles.btnPrimary}
+          type="button"
         >
-          Contact Me
+          {t.hero.work}
+        </button>
+        <button
+          type="button"
+          style={styles.btnGhost}
+          onClick={() => scrollToSection("contact")}
+        >
+          {t.hero.contact}
         </button>
       </div>
 

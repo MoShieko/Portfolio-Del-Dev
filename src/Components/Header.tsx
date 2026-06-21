@@ -1,15 +1,23 @@
 import { useState } from "react";
-import { NAV_LINKS } from "../constants";
+import { BRAND_NAME } from "../constants";
+import type { LanguageCode, Translation } from "../i18n";
+import { languageOptions } from "../i18n";
 import { styles } from "../styles";
 
-const linkTargets: Record<string, string> = {
-  Home: "#",
-  Projects: "#projects",
-  About: "#about",
-  Contact: "#contact",
+const navItems = [
+  { key: "home", href: "#" },
+  { key: "projects", href: "#projects" },
+  { key: "about", href: "#about" },
+  { key: "contact", href: "#contact" },
+] as const;
+
+type HeaderProps = {
+  language: LanguageCode;
+  onLanguageChange: (language: LanguageCode) => void;
+  t: Translation;
 };
 
-export function Header() {
+export function Header({ language, onLanguageChange, t }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const closeMenu = () => setIsMenuOpen(false);
@@ -19,7 +27,9 @@ export function Header() {
       className={`site-nav ${isMenuOpen ? "site-nav--open" : ""}`}
       style={styles.nav}
     >
-      <span style={styles.logo}>DEL.DEV</span>
+      <a href="#" onClick={closeMenu} style={styles.logo}>
+        <img alt={`${BRAND_NAME} logo`} src="/logo.png" style={styles.logoImage} />
+      </a>
       <button
         aria-label="Menu openen"
         aria-expanded={isMenuOpen}
@@ -33,23 +43,37 @@ export function Header() {
         <span />
       </button>
       <div className="site-nav__links" style={styles.navLinks}>
-        {NAV_LINKS.map((l, i) => (
+        {navItems.map((item, i) => (
           <a
-            key={l}
-            href={linkTargets[l]}
+            key={item.key}
+            href={item.href}
             onClick={closeMenu}
             style={{
               ...styles.navLink,
               ...(i === 0 ? styles.navLinkActive : {}),
             }}
           >
-            {l}
+            {t.nav[item.key]}
           </a>
         ))}
+        <label style={styles.languageControl}>
+          <span style={styles.languageLabel}>{t.languageLabel}</span>
+          <select
+            aria-label={t.languageLabel}
+            onChange={(event) =>
+              onLanguageChange(event.target.value as LanguageCode)
+            }
+            style={styles.languageSelect}
+            value={language}
+          >
+            {languageOptions.map((option) => (
+              <option key={option.code} value={option.code}>
+                {option.label}
+              </option>
+            ))}
+          </select>
+        </label>
       </div>
-      <button className="resume-button" style={styles.resumeBtn}>
-        Resume
-      </button>
     </nav>
   );
 }
