@@ -7,10 +7,13 @@
       name="description"
       content="DELDEV bouwt snelle, schaalbare en professionele websites, dashboards en digitale ervaringen."
     />
-    <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="shortcut icon" type="image/png" href="/favicon.png" />
-    <link rel="apple-touch-icon" href="/favicon.png" />
+    <meta name="application-name" content="DELDEV" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
     <link rel="canonical" href="https://deldev.nl/" />
     <meta name="theme-color" content="#0A0F1A" />
@@ -24,6 +27,9 @@
     />
     <meta property="og:url" content="https://deldev.nl/" />
     <meta property="og:image" content="https://deldev.nl/logo.png" />
+    <meta property="og:image:width" content="783" />
+    <meta property="og:image:height" content="285" />
+    <meta property="og:image:type" content="image/png" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="DELDEV" />
     <meta
@@ -31,15 +37,23 @@
       content="Snelle, schaalbare en professionele digitale ervaringen."
     />
     <meta name="twitter:image" content="https://deldev.nl/logo.png" />
+    <meta name="twitter:image:alt" content="DELDEV logo" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
     <title>DELDEV</title>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "Organization",
+        "@id": "https://deldev.nl/#organization",
         "name": "DELDEV",
         "url": "https://deldev.nl/",
-        "logo": "https://deldev.nl/logo.png",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://deldev.nl/logo.png",
+          "width": 783,
+          "height": 285
+        },
+        "image": "https://deldev.nl/logo.png",
         "email": "info@deldev.nl"
       }
     </script>

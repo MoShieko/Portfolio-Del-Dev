@@ -32,7 +32,7 @@ export function Hero({ t }: HeroProps) {
   };
 
   return (
-    <section className="hero-section" style={styles.hero}>
+    <section id="home" className="hero-section" style={styles.hero}>
       <div style={styles.availableBadge}>
         <span style={styles.dot} />
         {t.hero.badge}

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { type MouseEvent, useState } from "react";
 import { PROJECTS } from "../constants";
 import type { Translation } from "../i18n";
 import { styles } from "../styles";
@@ -206,6 +206,11 @@ type ProjectsProps = {
 };
 
 export function Projects({ t }: ProjectsProps) {
+  const scrollToContact = (event: MouseEvent<HTMLAnchorElement>) => {
+    event.preventDefault();
+    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <section id="projects" className="page-section" style={styles.section}>
       <div className="section-header" style={styles.sectionHeader}>
@@ -214,10 +219,9 @@ export function Projects({ t }: ProjectsProps) {
           <p style={styles.sectionSub}>{t.projects.sub}</p>
         </div>
         <a
-          href="https://github.com"
-          rel="noreferrer"
+          href="#contact"
+          onClick={scrollToContact}
           style={styles.viewAll}
-          target="_blank"
         >
           {t.projects.viewAll}
         </a>

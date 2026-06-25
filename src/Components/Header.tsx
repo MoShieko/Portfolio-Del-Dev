@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { type MouseEvent, useState } from "react";
 import { BRAND_NAME } from "../constants";
 import type { LanguageCode, Translation } from "../i18n";
 import { languageOptions } from "../i18n";
 import { styles } from "../styles";
 
 const navItems = [
-  { key: "home", href: "#" },
+  { key: "home", href: "#home" },
   { key: "projects", href: "#projects" },
   { key: "about", href: "#about" },
   { key: "contact", href: "#contact" },
@@ -21,13 +21,21 @@ export function Header({ language, onLanguageChange, t }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const closeMenu = () => setIsMenuOpen(false);
+  const navigateToSection =
+    (href: string) => (event: MouseEvent<HTMLAnchorElement>) => {
+      event.preventDefault();
+      closeMenu();
+
+      const target = document.getElementById(href.replace("#", ""));
+      target?.scrollIntoView({ behavior: "smooth" });
+    };
 
   return (
     <nav
       className={`site-nav ${isMenuOpen ? "site-nav--open" : ""}`}
       style={styles.nav}
     >
-      <a href="#" onClick={closeMenu} style={styles.logo}>
+      <a href="#home" onClick={navigateToSection("#home")} style={styles.logo}>
         <img alt={`${BRAND_NAME} logo`} src="/logo.png" style={styles.logoImage} />
       </a>
       <button
@@ -47,7 +55,7 @@ export function Header({ language, onLanguageChange, t }: HeaderProps) {
           <a
             key={item.key}
             href={item.href}
-            onClick={closeMenu}
+            onClick={navigateToSection(item.href)}
             style={{
               ...styles.navLink,
               ...(i === 0 ? styles.navLinkActive : {}),

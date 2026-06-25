@@ -30,7 +30,7 @@ export const translations = {
     projects: {
       title: "Featured Projects",
       sub: "Selected engineering achievements.",
-      viewAll: "VIEW_ALL_REPOS ->",
+      viewAll: "START_PROJECT ->",
       descriptions: [
         "A minimalist focus and productivity timer designed for deep work sessions with integrated cloud syncing.",
         "A clean, enterprise-grade interface for managing complex workflows and team collaboration analytics.",
@@ -86,7 +86,7 @@ export const translations = {
     projects: {
       title: "Uitgelichte Projecten",
       sub: "Geselecteerde technische resultaten.",
-      viewAll: "BEKIJK_ALLE_REPOS ->",
+      viewAll: "START_PROJECT ->",
       descriptions: [
         "Een minimalistische focus- en productiviteitstimer voor diepe werksessies met cloudsync.",
         "Een strak dashboard voor het beheren van complexe workflows en teamanalyses.",
@@ -142,7 +142,7 @@ export const translations = {
     projects: {
       title: "Ausgewahlte Projekte",
       sub: "Ausgewahlte technische Arbeiten.",
-      viewAll: "ALLE_REPOS_ANSEHEN ->",
+      viewAll: "PROJEKT_STARTEN ->",
       descriptions: [
         "Ein minimalistischer Fokus- und Produktivitatstimer fur Deep-Work-Sessions mit Cloud-Sync.",
         "Eine klare Enterprise-Oberflache fur komplexe Workflows und Team-Analytics.",
@@ -198,7 +198,7 @@ export const translations = {
     projects: {
       title: "Projets Phares",
       sub: "Realisations techniques selectionnees.",
-      viewAll: "VOIR_TOUS_LES_REPOS ->",
+      viewAll: "DEMARRER_PROJET ->",
       descriptions: [
         "Un minuteur minimaliste de concentration et productivite pour le deep work, avec synchronisation cloud.",
         "Une interface claire de niveau entreprise pour gerer des workflows complexes et des analyses d'equipe.",
@@ -254,7 +254,7 @@ export const translations = {
     projects: {
       title: "Proyectos Destacados",
       sub: "Logros tecnicos seleccionados.",
-      viewAll: "VER_TODOS_LOS_REPOS ->",
+      viewAll: "INICIAR_PROYECTO ->",
       descriptions: [
         "Un temporizador minimalista de enfoque y productividad para sesiones de trabajo profundo con sincronizacion en la nube.",
         "Una interfaz clara de nivel empresarial para gestionar workflows complejos y analiticas de equipo.",
@@ -310,7 +310,7 @@ export const translations = {
     projects: {
       title: "Progetti In Evidenza",
       sub: "Risultati tecnici selezionati.",
-      viewAll: "VEDI_TUTTI_I_REPO ->",
+      viewAll: "AVVIA_PROGETTO ->",
       descriptions: [
         "Un timer minimalista per focus e produttivita, pensato per sessioni di deep work con sincronizzazione cloud.",
         "Un'interfaccia pulita di livello enterprise per gestire workflow complessi e analisi del team.",
@@ -366,7 +366,7 @@ export const translations = {
     projects: {
       title: "Projetos Em Destaque",
       sub: "Resultados tecnicos selecionados.",
-      viewAll: "VER_TODOS_OS_REPOS ->",
+      viewAll: "INICIAR_PROJETO ->",
       descriptions: [
         "Um temporizador minimalista de foco e produtividade para sessoes de trabalho profundo com sincronizacao em nuvem.",
         "Uma interface limpa de nivel empresarial para gerir workflows complexos e analises de equipe.",
